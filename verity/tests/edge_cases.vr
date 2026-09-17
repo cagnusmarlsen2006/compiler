@@ -1,0 +1,19 @@
+// edge_cases.vr -- exercises float constants, an illegal character,
+// comments, and multi-char operators in one small file.
+
+/* block comment
+   spanning multiple lines */
+float pi;
+
+int main() {
+    pi = 3.14;              // FLOAT_CONST via S1 -> S2 -> S3
+    float ratio = 22 / 7.0;
+    int bad = 5 @ 2;         // '@' is illegal -> lexer reports + recovers
+    bool ok = (pi >= 3.0) && (pi <= 4.0);
+    if (ok) {
+        write(pi);
+    } else {
+        write(0);
+    }
+    return 0;
+}
